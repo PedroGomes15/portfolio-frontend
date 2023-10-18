@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "label": "Amazon Web Services (AWS)",
+    "stack": "Cloud"
+  },
+  {
+    "id": 2,
+    "label": "Bubble",
+    "stack": "Frontend"
+  },
+  {
+    "id": 3,
+    "label": "C#",
+    "stack": "Backend"
+  },
+  {
+    "id": 4,
+    "label": "Docker",
+    "stack": "Cloud"
+  },
+  {
+    "id": 5,
+    "label": "Express.js",
+    "stack": "Backend"
+  },
+  {
+    "id": 6,
+    "label": "Firebase Realtime Database",
+    "stack": "Backend"
+  },
+  {
+    "id": 7,
+    "label": "Git",
+    "stack": "DevOps"
+  },
+  {
+    "id": 8,
+    "label": "Git/GitHub",
+    "stack": "DevOps"
+  },
+  {
+    "id": 9,
+    "label": "GraphQL",
+    "stack": "Backend"
+  },
+  {
+    "id": 10,
+    "label": "HTML/CSS",
+    "stack": "Frontend"
+  },
+  {
+    "id": 11,
+    "label": "Java",
+    "stack": "Backend"
+  },
+  {
+    "id": 12,
+    "label": "JavaScript",
+    "stack": "Frontend"
+  },
+  {
+    "id": 13,
+    "label": "JIRA",
+    "stack": "DevOps"
+  },
+  {
+    "id": 14,
+    "label": "Kotlin",
+    "stack": "Backend"
+  },
+  {
+    "id": 15,
+    "label": "MongoDB",
+    "stack": "Database"
+  },
+  {
+    "id": 16,
+    "label": "MySQL",
+    "stack": "Database"
+  },
+  {
+    "id": 17,
+    "label": "Node.js",
+    "stack": "Backend"
+  },
+  {
+    "id": 18,
+    "label": "OAuth",
+    "stack": "Security"
+  },
+  {
+    "id": 19,
+    "label": "React",
+    "stack": "Frontend"
+  },
+  {
+    "id": 20,
+    "label": "Redis",
+    "stack": "Database"
+  },
+  {
+    "id": 21,
+    "label": "RabbitMQ",
+    "stack": "Backend"
+  },
+  {
+    "id": 22,
+    "label": "SQLite",
+    "stack": "Database"
+  },
+  {
+    "id": 23,
+    "label": "Spring Boot",
+    "stack": "Backend"
+  },
+  {
+    "id": 24,
+    "label": "Unity",
+    "stack": "Engine"
+  },
+  {
+    "id": 25,
+    "label": "Vue.js",
+    "stack": "Frontend"
+  },
+  {
+    "id": 26,
+    "label": "WebSockets",
+    "stack": "Backend"
+  },
+  {
+    "id": 27,
+    "label": "JSON",
+    "stack": "Data Format"
+  },
+  {
+    "id": 28,
+    "label": "Trello",
+    "stack": "DevOps"
+  }
+]

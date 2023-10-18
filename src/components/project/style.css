@@ -1,0 +1,52 @@
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  flex-grow: 1;
+  padding-bottom: 20px;
+}
+
+.project-details-container {
+  position: relative;
+  max-width: 50%;
+  flex: 2;
+}
+
+.project-image {
+  border: 1px solid var(--white);
+  border-radius: 30px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.project-name {
+  position: absolute;
+  left: -85px;
+  bottom: -6px;
+  font-family: "Oxygen";
+  color: var(--white);
+  font-size: 50px;
+}
+
+.project-stacks {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  margin-left: 20px;
+  right: 0px;
+  color: var(--white);
+}
+
+/* Estilos para a lista de textos */
+.project-stacks ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-stacks li {
+  margin-bottom: 10px;
+  text-align: left;
+}

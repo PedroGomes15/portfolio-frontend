@@ -1,0 +1,56 @@
+.my-button {
+  background: transparent;
+  color: var(--white);
+  border: 0px;
+  padding: 5px 5px;
+  cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  text-decoration: none;
+}
+
+.my-button:not(:disabled)::before,
+.my-button:not(:disabled)::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: var(--white);
+  bottom: 0;
+  transition: width 0.3s ease;
+}
+
+.my-button:not(:disabled)::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.my-button:not(:disabled)::after {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.my-button:not(:disabled):hover::before,
+.my-button:not(:disabled):hover::after {
+  width: 90%;
+}
+
+.my-button:disabled,
+.my-button[disabled] {
+  border: 1px solid var(--white);
+  cursor: auto;
+  border-radius: 5px;
+}
+.my-button-dark {
+  color: var(--black);
+}
+
+.my-button-dark:not(:disabled)::before,
+.my-button-dark:not(:disabled)::after {
+  background: var(--black);
+}
+
+.my-button-dark:disabled,
+.my-button-dark[disabled] {
+  border: 1px solid var(--black);
+}

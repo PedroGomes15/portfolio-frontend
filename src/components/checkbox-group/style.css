@@ -1,0 +1,27 @@
+.checkbox-group {
+  border: 1px solid var(--black);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: var(--background-white-color);
+  display: flex;
+  flex-direction: row;
+}
+
+.category-column {
+  margin: 0px 10px;
+}
+
+.category-column h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.category-column input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.category-column label:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}

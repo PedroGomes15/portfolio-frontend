@@ -1,0 +1,31 @@
+:root {
+  --background-white-color: #f8f8f8;
+  --background-black-color: #0a0a0a;
+  --white: #ffffff;
+  --black: #020202;
+}
+
+@font-face {
+  font-family: "Telegraf";
+  src: url("./fonts/Telegraf-Regular.otf") format("opentype");
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Telegraf", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--black);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: "Telegraf", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+p {
+  cursor: default;
+  align-self: center;
+}

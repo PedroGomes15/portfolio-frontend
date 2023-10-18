@@ -1,0 +1,39 @@
+/* styles.css */
+.checkbox-label {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+  align-items: "center";
+}
+
+.checkbox-label p {
+  text-align: center;
+  cursor: pointer; /* Mude o cursor ao passar o mouse */
+}
+
+.checkbox-label input[type="checkbox"] {
+  appearance: none; /* Remove o estilo padrão do navegador */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px; /* Define o tamanho desejado */
+  height: 20px;
+  border: 1px solid var(--black); /* Adicione uma borda preta */
+  border-radius: 5px; /* Cantos arredondados */
+  outline: none; /* Remove a borda de foco */
+  cursor: pointer; /* Mude o cursor ao passar o mouse */
+}
+
+/* Estilo quando o checkbox está marcado */
+.checkbox-label input[type="checkbox"]:checked {
+  border-color: var(--black); /* Cor da borda quando marcado */
+}
+
+/* Estilo do ícone de checkmark quando o checkbox está marcado */
+.checkbox-label input[type="checkbox"]:checked::before {
+  content: "\2714"; /* Código do ícone de checkmark Unicode */
+  font-size: 18px; /* Tamanho do ícone */
+  color: var(--black); /* Cor do ícone igual à cor da borda */
+  position: relative;
+  top: -4px;
+  left: 2px;
+}

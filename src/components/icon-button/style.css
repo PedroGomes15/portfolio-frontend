@@ -1,0 +1,27 @@
+.icon-button {
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--white);
+}
+
+.icon-button:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.icon-button-dark {
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+.icon-button-dark:hover {
+  background-color: var(--black);
+  color: var(--white);
+}

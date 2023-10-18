@@ -1,0 +1,39 @@
+.about-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+.about-text-name {
+  font-size: 50px;
+  font-family: "Oxygen";
+  min-width: 10%;
+}
+
+.about-text-content {
+  max-width: 60%;
+  min-width: 800px;
+}
+
+.about-image-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.vertical-line {
+  width: 1px;
+  background-color: var(--black);
+  height: 110px;
+  margin-bottom: -20px;
+  display: inline-block;
+  z-index: 100;
+}
+
+.about-image {
+  height: auto;
+  max-height: 431px;
+  object-fit: cover;
+  aspect-ratio: 374 / 431;
+}

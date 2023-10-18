@@ -1,0 +1,40 @@
+/* MeuComponente.css */
+.container {
+  flex: 1; /* Isso faz com que a div filha ocupe todo o espaço disponível do pai */
+  background-color: var(--background-black-color);
+  border-radius: 10px;
+  border: 1px solid var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin: auto;
+  text-align: center;
+  padding: 80px 0px;
+  width: 100%;
+  gap: 30px;
+}
+
+p {
+  margin: 0px;
+}
+
+.text-small {
+  font-size: 18px;
+  color: var(--white);
+}
+
+.text-large {
+  font-size: 50px;
+  color: var(--white);
+  font-family: "Oxygen";
+}
+
+.contact-links {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  height: 20vh;
+  align-items: flex-end;
+}

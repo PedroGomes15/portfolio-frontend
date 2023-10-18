@@ -1,0 +1,26 @@
+# Arquivos temporários
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Construído
+build/
+dist/
+coverage/
+package-lock.json
+yarn.lock
+
+# Ambiente
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env*.local
+.env*.development
+.env*.test
+.env*.production
+
+# Outros
+.DS_Store
+Thumbs.db

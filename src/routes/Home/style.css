@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-height: 95vh;
+  padding: 20px 100px;
+  gap: 20px;
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  flex-direction: column;
+}
+
+.footer {
+  padding: 30px 0px;
+  display: flex;
+  align-content: flex-start;
+  color: var(--white);
+}
+
+.dark {
+  color: var(--black);
+}
