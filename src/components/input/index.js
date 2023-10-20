@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export default ({ label, type = "text", value, onChange, areaInput, isDark, className }) => {
+export default ({ label, type = "text", value, onChange, areaInput, isDark, className = "" }) => {
   return (
     <div className={`my-input ${isDark ? "my-input-dark" : ""} ${className}`}>
       <label>{label}</label>

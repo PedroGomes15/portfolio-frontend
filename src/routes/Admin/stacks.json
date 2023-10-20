@@ -27,7 +27,7 @@
   {
     "id": 6,
     "label": "Firebase Realtime Database",
-    "stack": "Backend"
+    "stack": "Database"
   },
   {
     "id": 7,
@@ -131,11 +131,6 @@
   },
   {
     "id": 27,
-    "label": "JSON",
-    "stack": "Data Format"
-  },
-  {
-    "id": 28,
     "label": "Trello",
     "stack": "DevOps"
   }

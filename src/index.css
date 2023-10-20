@@ -28,4 +28,6 @@ code {
 p {
   cursor: default;
   align-self: center;
+  margin: 0;
+  padding: 0;
 }

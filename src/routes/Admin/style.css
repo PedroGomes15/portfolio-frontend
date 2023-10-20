@@ -14,3 +14,10 @@
   margin: 10px;
   gap: 20px;
 }
+
+.add-element-description-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  width: 100%;
+}

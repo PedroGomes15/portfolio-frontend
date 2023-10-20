@@ -15,10 +15,6 @@
   gap: 30px;
 }
 
-p {
-  margin: 0px;
-}
-
 .text-small {
   font-size: 18px;
   color: var(--white);

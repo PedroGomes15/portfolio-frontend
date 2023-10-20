@@ -4,6 +4,7 @@
   margin: 10px 0;
   display: flex;
   flex-direction: column;
+  width: 60%;
 }
 
 .my-input label {

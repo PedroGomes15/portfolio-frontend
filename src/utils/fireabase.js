@@ -10,23 +10,8 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-// Inicialize o Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-
-// Função para criar dados em uma referência específica
-function createData(path, data) {
-  const db = getDatabase();
-  const dbRef = ref(db, path);
-
-  try {
-    const newChildRef = push(dbRef); // Gera um novo ID automaticamente
-    set(newChildRef, data);
-  } catch (error) {
-    console.error("Erro ao criar dados:", error);
-    throw error;
-  }
-}
 
 // Função para ler todos os dados em uma referência específica
 async function readData(path) {
@@ -56,5 +41,5 @@ async function readData(path) {
   }
 }
 
-export { createData, readData };
+export { readData };
 export default db;

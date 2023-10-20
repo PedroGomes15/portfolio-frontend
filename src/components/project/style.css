@@ -1,41 +1,88 @@
 .project-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
   justify-content: center;
   flex-grow: 1;
-  padding-bottom: 20px;
+  padding: 30px;
 }
 
 .project-details-container {
   position: relative;
   max-width: 50%;
   flex: 2;
+  border: 1px solid var(--white);
+  border-radius: 30px;
+}
+
+.project-content-overlay {
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  border-radius: 30px;
+}
+
+.project-details-container:hover .project-content-overlay {
+  opacity: 1;
 }
 
 .project-image {
-  border: 1px solid var(--white);
-  border-radius: 30px;
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 30px;
+}
+
+.project-content-description {
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.project-details-container:hover .project-content-description {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.project-content-description p {
+  text-indent: 50px;
+  font-size: 18px;
+  line-height: 1.3;
+  padding: 0em 2em;
+  color: var(--white);
 }
 
 .project-name {
+  text-decoration: none;
   position: absolute;
   left: -85px;
-  bottom: -6px;
+  bottom: 0px;
   font-family: "Oxygen";
   color: var(--white);
   font-size: 50px;
+  line-height: 0.79;
 }
 
 .project-stacks {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   flex: 1;
   position: relative;
-  margin-left: 20px;
   right: 0px;
   color: var(--white);
 }
@@ -43,10 +90,15 @@
 /* Estilos para a lista de textos */
 .project-stacks ul {
   list-style-type: none;
-  padding: 0;
+  padding-left: 30px;
 }
 
 .project-stacks li {
   margin-bottom: 10px;
   text-align: left;
+  cursor: default;
+}
+
+.fadeIn-top {
+  top: 30%;
 }

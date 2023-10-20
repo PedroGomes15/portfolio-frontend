@@ -3,6 +3,7 @@ import "./style.css";
 
 export default ({ text, onClick, selected, isDark, className }) => {
   const handleClick = () => {
+    if (!onClick) return;
     onClick();
   };
 
