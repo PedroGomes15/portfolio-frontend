@@ -9,15 +9,35 @@ import CheckboxGroup from "../../components/checkbox-group";
 import initialStacks from "./stacks.json";
 import Button from "../../components/button";
 import LoginPopup from "../../components/login-popup";
+import Cookies from "js-cookie";
+import { newProject } from "../../controller/dataController";
+import { validToken } from "../../controller/tokenController";
 
 function Admin() {
+  const [hasToken, setHasToken] = useState(false);
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [descriptionEn, setDescriptionEn] = useState("");
   const [descriptionPtbr, setDescriptionPtbr] = useState("");
   const [selectedItems, setSelectedItems] = useState([]);
 
-  useEffect(() => {});
+  useEffect(() => {
+    async function validadeToken(params) {
+      const token = Cookies.get("pedroToken");
+
+      if (token) {
+        const isValidToken = await validToken(token);
+        if (isValidToken) {
+          setHasToken(true);
+        } else {
+          Cookies.remove("pedroToken");
+          setHasToken(false);
+        }
+      }
+    }
+
+    validadeToken();
+  }, []);
 
   const addElementToDatabase = async () => {
     const selectedLabels = selectedItems
@@ -33,7 +53,7 @@ function Admin() {
       stacks: selectedLabels,
     };
 
-    //let el = await createData("project", element);
+    let el = await newProject(element);
 
     setName("");
     setImage("");
@@ -50,8 +70,7 @@ function Admin() {
     }
   };
 
-  return (
-    /*<LoginPopup></LoginPopup>*/
+  return hasToken ? (
     <div className="add-element-container">
       <h1>Adicionar Projeto</h1>
       <div className="input-container">
@@ -79,6 +98,8 @@ function Admin() {
         <Button text="Adicionar" isDark={true} onClick={addElementToDatabase} />
       </div>
     </div>
+  ) : (
+    <LoginPopup handleLoginSuccess={(suc) => setHasToken(suc)} />
   );
 }
 

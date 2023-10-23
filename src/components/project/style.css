@@ -2,8 +2,6 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
-  flex-grow: 1;
-  padding: 30px;
 }
 
 .project-details-container {
@@ -101,4 +99,10 @@
 
 .fadeIn-top {
   top: 30%;
+}
+
+@media (max-width: 1400px) {
+  .project-content-description p {
+    font-size: 14px;
+  }
 }

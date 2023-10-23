@@ -6,6 +6,8 @@
   background-color: var(--background-white-color);
   display: flex;
   flex-direction: row;
+  max-height: 50%;
+  overflow: scroll;
 }
 
 .category-column {

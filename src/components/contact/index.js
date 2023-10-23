@@ -17,8 +17,11 @@ export default () => {
 
   return (
     <div className="container">
-      <p className="text-small">{translate("contact-menu-haveProject")}</p>
-      <p className="text-large">{translate("contact-menu-getInTouch")}</p>
+      <div style={{ flex: 1 }} />
+      <div className="contact-text-main">
+        <p className="text-small">{translate("contact-menu-haveProject")}</p>
+        <p className="text-large">{translate("contact-menu-getInTouch")}</p>
+      </div>
       <div className="contact-links">
         <Button
           text="LINKEDIN"
