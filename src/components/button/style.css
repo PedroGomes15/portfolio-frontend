@@ -1,3 +1,9 @@
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
 .my-button {
   background: transparent;
   color: var(--white);
@@ -7,6 +13,9 @@
   font-size: 16px;
   position: relative;
   text-decoration: none;
+  @media (max-width: 700px) {
+    font-size: 16px;
+  }
 }
 
 .my-button:not(:disabled)::before,

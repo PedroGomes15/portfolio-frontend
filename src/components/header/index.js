@@ -6,11 +6,15 @@ import Button from "../../components/button";
 import Contact from "../../components/contact";
 import { useNavigate } from "react-router-dom";
 import IconButton from "../../components/icon-button";
+import MediaQuery from "react-responsive";
 
 const langs = ["ptbr", "en"];
 
 function Header({ currentPage, isDark }) {
   const [currentLangIndex, setCurrentLangIndex] = useState(0);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+  const [headerMobileDark, setHeaderMobileDark] = useState(isDark);
 
   const navigate = useNavigate();
 
@@ -28,12 +32,25 @@ function Header({ currentPage, isDark }) {
     switch (currentPage) {
       case "about":
         return (
-          <IconButton
-            iconName="Undo"
-            onClick={() => redirectTo("")}
-            isDark={isDark}
-            customIconStyle={{ transform: "rotate(30deg)" }}
-          />
+          <MediaQuery maxWidth={700}>
+            {(matches) =>
+              matches ? (
+                <Button
+                  text={"PEDRO GOMES"}
+                  onClick={() => redirectTo("")}
+                  className="header-name"
+                  isDark={headerMobileDark}
+                />
+              ) : (
+                <IconButton
+                  iconName="Undo"
+                  onClick={() => redirectTo("")}
+                  isDark={isDark}
+                  customIconStyle={{ transform: "rotate(30deg)" }}
+                />
+              )
+            }
+          </MediaQuery>
         );
       case "portfolio":
         return (
@@ -44,27 +61,72 @@ function Header({ currentPage, isDark }) {
     }
   };
 
+  const renderMenuButton = (textToTranslate, page, redirectPage) => {
+    return (
+      <Button
+        text={translate(textToTranslate)}
+        onClick={() => redirectTo(redirectPage || page)}
+        selected={currentPage == page}
+        isDark={headerMobileDark}
+      />
+    );
+  };
+
   return (
     <div className={`header ${isDark ? "dark" : ""}`}>
       <div className="header-name-button">{renderNameButton()}</div>
 
-      <div className="header-menu">
-        <Button
-          text={translate("header-menu-portfolio")}
-          onClick={() => redirectTo("portfolio")}
-          selected={currentPage == "portfolio"}
-          isDark={isDark}
-        />
-        <Button
-          text={translate("header-menu-aboutme")}
-          onClick={() => redirectTo("about")}
-          selected={currentPage == "about"}
-          isDark={isDark}
-        />
-      </div>
-      <div className="header-language">
-        <Button text={translate("header-menu-language")} onClick={changeLanguage} isDark={isDark} />
-      </div>
+      <MediaQuery minWidth={700}>
+        {(matches) =>
+          matches ? (
+            <>
+              <div className="header-menu">
+                {renderMenuButton("header-menu-portfolio", "portfolio")}
+                {renderMenuButton("header-menu-aboutme", "about")}
+              </div>
+              <div className="header-language">
+                <Button
+                  text={translate("header-menu-language")}
+                  onClick={changeLanguage}
+                  isDark={isDark}
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <div
+                className={`header-menu-mobile ${
+                  shouldAnimate ? (menuIsOpen ? "visible" : "hidden") : ""
+                }`}
+              >
+                <div className={"header-menu-mobile-flex-container"}></div>
+                {renderMenuButton("header-menu-home", "home", " ")}
+                {renderMenuButton("header-menu-portfolio", "portfolio")}
+                {renderMenuButton("header-menu-aboutme", "about")}
+                <Button text={translate("header-menu-language")} onClick={changeLanguage} />
+                <div className={"header-menu-mobile-flex-container"}>
+                  <p className="header-menu-available-mobile">
+                    {translate("footer-menu-available")}
+                  </p>
+                </div>
+              </div>
+              <IconButton
+                iconName={menuIsOpen ? "Close" : "Menu"}
+                customIconButtonStyle={{ border: "none", padding: "0px", zIndex: "102" }}
+                customIconStyle={{ fontSize: "40px" }}
+                isDark={headerMobileDark}
+                onClick={() => {
+                  if (isDark == true) {
+                    setHeaderMobileDark(!headerMobileDark);
+                  }
+                  setMenuIsOpen(!menuIsOpen);
+                  setShouldAnimate(true);
+                }}
+              />
+            </>
+          )
+        }
+      </MediaQuery>
     </div>
   );
 }

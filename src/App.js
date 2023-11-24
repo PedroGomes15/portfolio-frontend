@@ -15,10 +15,8 @@ function App() {
       setLanguage(i18n.language);
     };
 
-    // Adicione um ouvinte para o evento de mudança de idioma
     i18n.on("languageChanged", handleLanguageChange);
 
-    // Certifique-se de remover o ouvinte quando o componente for desmontado
     return () => {
       i18n.off("languageChanged", handleLanguageChange);
     };

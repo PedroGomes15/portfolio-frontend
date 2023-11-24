@@ -1,26 +1,18 @@
 import React, { useState } from "react";
-
 import "./style.css";
-
 import Button from "../button";
 import { translate } from "../../utils/translate";
+import MediaQuery from "react-responsive";
 
-const myEmail = "pedro.armando15@hotmail.com";
-
-export default ({ project }) => {
-  const openLinkInNewTab = (url) => {
-    window.open(url, "_blank");
-  };
-
-  const openEmail = () => {
-    const mailtoLink = `mailto:${myEmail}`;
-    window.location.href = mailtoLink;
-  };
+const Project = ({ project }) => {
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div className="project-container">
-      <div style={{ flex: 1 }}></div>
-      <div className="project-details-container">
+    <div className={`project-container ${isClicked ? "clicked" : ""}`}>
+      <MediaQuery minWidth={700}>
+        <div style={{ flex: 1 }}></div>
+      </MediaQuery>
+      <div className="project-details-container" onClick={() => setIsClicked(!isClicked)}>
         <div className="project-content-overlay"></div>
         <img className="project-image" src={project.image} alt={project.name} />
         <div className="project-content-description fadeIn-top">
@@ -40,3 +32,5 @@ export default ({ project }) => {
     </div>
   );
 };
+
+export default Project;

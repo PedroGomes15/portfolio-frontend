@@ -1,6 +1,5 @@
-/* MeuComponente.css */
-.container {
-  flex: 1; /* Isso faz com que a div filha ocupe todo o espaço disponível do pai */
+.container-mobile {
+  flex: 1;
   background-color: var(--background-black-color);
   border-radius: 30px;
   border: 1px solid var(--white);
@@ -15,31 +14,31 @@
   gap: 30px;
 }
 
-.contact-text-main {
-  flex: 2;
+.contact-text-main-mobile {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
 }
 
-.text-small {
-  font-size: 18px;
+.text-small-mobile {
+  font-size: 14px;
   color: var(--white);
 }
 
-.text-large {
-  font-size: 50px;
+.text-large-mobile {
+  font-size: 30px;
   color: var(--white);
   font-family: "Oxygen";
 }
 
-.contact-links {
-  width: 40%;
+.contact-links-mobile {
   display: flex;
-  justify-content: space-around;
-  gap: 30px;
+  justify-content: center;
+  gap: 20px;
   height: 20vh;
-  align-items: flex-end;
+  align-items: flex-start;
   flex: 1;
+  flex-direction: column;
 }

@@ -9,6 +9,7 @@ import Button from "../../components/button";
 import Project from "../../components/project";
 import Header from "../../components/header";
 import IconButton from "../../components/icon-button";
+import MediaQuery from "react-responsive";
 
 function Portfolio() {
   const [projects, setProjects] = useState([]);
@@ -34,14 +35,31 @@ function Portfolio() {
     );
   };
 
+  const portifolioControl = (mobile) => {
+    return (
+      <div className="portfolio-control">
+        <IconButton
+          iconName="ArrowBack"
+          onClick={() => advanceOrDecrementIndex(false)}
+          customIconButtonStyle={mobile ? { border: "none", padding: "0px" } : {}}
+          customIconStyle={mobile ? { fontSize: "30px" } : {}}
+        />
+        <IconButton
+          iconName="ArrowForward"
+          onClick={() => advanceOrDecrementIndex(true)}
+          customIconButtonStyle={mobile ? { border: "none", padding: "0px" } : {}}
+          customIconStyle={mobile ? { fontSize: "30px" } : {}}
+        />
+      </div>
+    );
+  };
+
   return (
     <div className="main">
-      <Header currentPage="portfolio" />
+      <Header currentPage="portfolio" isDark={false} />
+      <MediaQuery maxWidth={700}>{portifolioControl(true)}</MediaQuery>
       {projects[projectIndex] != null && <Project project={projects[projectIndex]} />}
-      <div className="portfolio-control">
-        <IconButton iconName="ArrowBack" onClick={() => advanceOrDecrementIndex(false)} />
-        <IconButton iconName="ArrowForward" onClick={() => advanceOrDecrementIndex(true)} />
-      </div>
+      <MediaQuery minWidth={700}>{portifolioControl(false)}</MediaQuery>
     </div>
   );
 }

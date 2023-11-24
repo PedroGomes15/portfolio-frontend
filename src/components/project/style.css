@@ -24,7 +24,7 @@
   border-radius: 30px;
 }
 
-.project-details-container:hover .project-content-overlay {
+.project-container.clicked .project-content-overlay {
   opacity: 1;
 }
 
@@ -51,7 +51,7 @@
   transition: all 0.3s ease-in-out 0s;
 }
 
-.project-details-container:hover .project-content-description {
+.project-container.clicked .project-content-description {
   top: 50%;
   left: 50%;
   opacity: 1;
@@ -105,5 +105,46 @@
 @media (max-width: 1400px) {
   .project-content-description p {
     font-size: 14px;
+  }
+}
+
+@media (min-width: 700px) {
+  .project-details-container:hover .project-content-overlay {
+    opacity: 1;
+  }
+
+  .project-details-container:hover .project-content-description {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .project-container {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+  }
+
+  .project-details-container {
+    max-width: 90%;
+  }
+
+  .project-name {
+    font-size: 30px;
+    left: -10px;
+    bottom: -10px;
+  }
+
+  .project-stacks {
+    flex-direction: column; /* Altera o layout para uma coluna */
+  }
+
+  .project-stacks ul {
+    columns: 3;
+    padding-left: 0; /* Remove o recuo à esquerda na lista */
   }
 }
