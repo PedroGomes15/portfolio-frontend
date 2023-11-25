@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MediaQuery from "react-responsive";
 
 import "./style.css";
 
@@ -9,7 +10,6 @@ import Button from "../../components/button";
 import Project from "../../components/project";
 import Header from "../../components/header";
 import IconButton from "../../components/icon-button";
-import MediaQuery from "react-responsive";
 
 function Portfolio() {
   const [projects, setProjects] = useState([]);
@@ -21,6 +21,12 @@ function Portfolio() {
 
     async function fetchData() {
       const projectData = await readData("project");
+
+      projectData.forEach((project) => {
+        const image = new Image();
+        image.src = project.image;
+      });
+
       setProjects(projectData);
     }
 
