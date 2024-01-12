@@ -1,0 +1,118 @@
+.project-details-container {
+  position: relative;
+  max-width: 50%;
+  flex: 2;
+  border: 1px solid var(--white);
+  border-radius: 30px;
+}
+
+.project-content-overlay {
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+  border-radius: 30px;
+}
+
+.project-container.clicked .project-content-overlay {
+  opacity: 1;
+}
+
+.project-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  aspect-ratio: 1000 / 750;
+}
+
+.project-name {
+  text-decoration: none;
+  position: absolute;
+  left: -85px;
+  bottom: 0px;
+  font-family: "Oxygen";
+  color: var(--white);
+  font-size: 50px;
+  line-height: 0.79;
+}
+
+.project-content-description {
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.project-container.clicked .project-content-description {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.project-content-description p {
+  text-indent: 50px;
+  font-size: 18px;
+  line-height: 1.3;
+  padding: 0em 2em;
+  color: var(--white);
+}
+
+@media (max-width: 1400px) {
+  .project-content-description p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 700px) {
+  .project-details-container:hover .project-content-overlay {
+    opacity: 1;
+  }
+
+  .project-details-container:hover .project-content-description {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .project-container {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+  }
+
+  .project-details-container {
+    max-width: 90%;
+  }
+
+  .project-name {
+    font-size: 30px;
+    left: -10px;
+    bottom: -26px;
+  }
+
+  .project-stacks {
+    flex-direction: column; /* Altera o layout para uma coluna */
+  }
+
+  .project-stacks ul {
+    columns: 3;
+    padding-left: 0; /* Remove o recuo à esquerda na lista */
+  }
+}

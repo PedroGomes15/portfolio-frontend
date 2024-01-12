@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 class ApiService {
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: process.env.REACT_APP_API_URL, // Defina a URL base no .env
+      baseURL: "http://localhost:3001/", //process.env.REACT_APP_API_URL, // Defina a URL base no .env
     });
     this.token = Cookies.get("pedroToken");
   }
@@ -23,14 +23,13 @@ class ApiService {
   async post(route, data) {
     try {
       const headers = this.token ? { Authorization: `Bearer ${this.token}` } : {};
+      console.log("header ", headers);
       const response = await this.axiosInstance.post(route, data, { headers });
       return response.data;
     } catch (error) {
       throw error;
     }
   }
-
-  // Adicione outras funções para PUT, DELETE, etc., conforme necessário
 }
 
 export default new ApiService();

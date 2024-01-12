@@ -1,0 +1,9 @@
+.project-details-container {
+  position: relative;
+  max-width: 50%;
+  flex: 2;
+  border: 1px solid var(--white);
+  border-radius: 30px;
+  height: 100%;
+  width: 100%;
+}
