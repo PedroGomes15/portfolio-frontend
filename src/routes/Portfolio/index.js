@@ -20,7 +20,7 @@ function Portfolio() {
     document.body.style.backgroundColor = bgColor;
 
     async function fetchData() {
-      const projectData = await readData("project");
+      const projectData = await readData("game-project");
 
       projectData.forEach((project) => {
         const image = new Image();

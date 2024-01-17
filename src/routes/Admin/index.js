@@ -50,7 +50,10 @@ function Admin() {
       image,
       descriptionEn,
       descriptionPtbr,
-      stacks: selectedLabels,
+      images: [
+        "https://placehold.co/600x400/EEE/31343C",
+        "https://placehold.co/600x400/EEE/31343C",
+      ],
     };
 
     let el = await newProject(element);

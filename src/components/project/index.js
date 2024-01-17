@@ -3,6 +3,7 @@ import "./style.css";
 import Button from "../button";
 import { translate } from "../../utils/translate";
 import MediaQuery from "react-responsive";
+import DisplayImage from "../project-image-display";
 
 const Project = ({ project }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -22,12 +23,10 @@ const Project = ({ project }) => {
         </div>
         <p className="project-name">{project.name}</p>
       </div>
-      <div className="project-stacks">
-        <ul>
-          {project.stacks.map((texto, index) => (
-            <li key={index}>{texto}</li>
-          ))}
-        </ul>
+      <div className="project-images">
+        {project.images.map((src, index) => (
+          <DisplayImage src={src} key={index}></DisplayImage>
+        ))}
       </div>
     </div>
   );

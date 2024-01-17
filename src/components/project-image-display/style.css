@@ -1,0 +1,43 @@
+.project-portifolio-image,
+.fullscreen-image {
+  height: 10vh;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px var(--background-white-color) solid;
+  transition: all 1s ease-in;
+  cursor: pointer;
+}
+
+.fullscreen-image.fullscreen {
+  animation: scale 0.3s ease-in forwards; /* Aplica a animação de entrada */
+}
+
+.fullscreen-image {
+  animation: scaleOut 0.3s ease-in forwards; /* Aplica a animação de entrada */
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro translúcido */
+  z-index: 999;
+  cursor: pointer;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+    opacity: 0;
+  }
+  to {
+    transform: scale(6);
+    opacity: 1;
+  }
+}
