@@ -6,8 +6,7 @@
 
 .project-details-container {
   position: relative;
-  max-width: 50%;
-  flex: 2;
+  flex: 3;
   border: 1px solid var(--white);
   border-radius: 30px;
 }
@@ -33,7 +32,7 @@
   width: 100%;
   height: 100%;
   border-radius: 30px;
-  aspect-ratio: 1000 / 750;
+  aspect-ratio: 16/9;
 }
 
 .project-content-description {
@@ -110,20 +109,36 @@
 
 @media (max-width: 700px) {
   .project-container {
-    height: 100vh;
+    height: 75vh;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 60px;
     overflow: hidden;
   }
 
   .project-details-container {
-    max-width: 90%;
+    max-width: 100%;
+    border-radius: 10px;
+    max-height: 35vh;
   }
 
   .project-name {
     font-size: 30px;
-    left: -10px;
-    bottom: -26px;
+    left: 0px;
+    bottom: -35px;
+  }
+
+  .project-images {
+    flex-wrap: wrap;
+    max-width: 100%;
+    flex-direction: unset;
+  }
+
+  .project-image {
+    border-radius: 10px;
+  }
+
+  .project-content-overlay {
+    border-radius: 10px;
   }
 }

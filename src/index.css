@@ -32,3 +32,7 @@ p {
   padding: 0;
   white-space: normal;
 }
+
+img {
+  aspect-ratio: 16/9;
+}
