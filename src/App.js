@@ -22,6 +22,8 @@ function App() {
     };
   }, []);
 
+  console.log("FIREBASE PROJECT ID:", process.env.REACT_APP_FIREBASE_PROJECT_ID);
+
   return (
     <Router>
       <Routes>
