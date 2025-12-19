@@ -9,6 +9,7 @@ jobs:
   deploy:
     name: FTP Deploy
     runs-on: ubuntu-latest
+    environment: Portifolio Pedro - Basilisco
 
     steps:
       - name: Checkout repo
